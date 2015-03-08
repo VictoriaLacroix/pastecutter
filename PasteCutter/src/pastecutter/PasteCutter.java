@@ -8,7 +8,7 @@ public class PasteCutter extends JFrame implements ActionListener{
 	
 	//element declaration
 	private JTextArea textMain;
-	private Holder[] holder;
+	private HolderArray holder;
 	private JMenuItem copy, paste;
 	private JScrollPane scroller;
 	private JRadioButtonMenuItem north, south, east, west, hidden;
@@ -75,6 +75,7 @@ public class PasteCutter extends JFrame implements ActionListener{
 		 * panel initialization
 		 */
 		//holding panes
+		// deprecated, basically.
 		top = new JPanel();
 		top.setLayout(new GridLayout(1,5));
 		top.setPreferredSize((new Dimension(100, 100)));
@@ -99,6 +100,8 @@ public class PasteCutter extends JFrame implements ActionListener{
 		cp.add(menuBar, BorderLayout.NORTH);
 		cp.add(main, BorderLayout.CENTER);
 
+		/*
+			Commenting for now
 		//menu radio button names
 		north.setActionCommand("north");
 		south.setActionCommand("south");
@@ -112,14 +115,14 @@ public class PasteCutter extends JFrame implements ActionListener{
 		east.addActionListener(this);
 		west.addActionListener(this);
 		hidden.addActionListener(this);
+		*/
 	}
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		/*
 		 * menu action listeners
-		 */
+		 *
 		if(e.getActionCommand() == "north"){
 			main.remove(bottom);
 			main.remove(left);
@@ -167,13 +170,13 @@ public class PasteCutter extends JFrame implements ActionListener{
 		else if(e.getActionCommand() == "copy"){
 			
 		}
+		*/
 	}
 
 	public static void main(String[] args) {
 		PasteCutter frame = new PasteCutter();
 		frame.setSize(1024,576); //16:9
-	    frame.setVisible(true);
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	}
 }
