@@ -9,13 +9,14 @@ public class PasteCutter extends JFrame implements ActionListener{
 	//element declaration
 	private JTextArea textMain;
 	private Holder[] holder;
+	private JMenuItem copy, paste;
 	private JScrollPane scroller;
 	private JRadioButtonMenuItem north, south, east, west, hidden;
 	private ButtonGroup location;
 	private JPanel top, bottom, left, right, main;
 	private JMenuBar menuBar;
 	private JMenu menu;
-	
+
 	Container cp = getContentPane();
 	
 	public PasteCutter(){
@@ -59,6 +60,16 @@ public class PasteCutter extends JFrame implements ActionListener{
 		menu.add(south);
 		menu.add(west);
 		menu.add(hidden);
+		//copypasta
+		copy = new JMenuItem("Copy");
+		paste = new JMenuItem("Paste");
+		copy.addActionListener(this);
+		paste.addActionListener(this);
+		copy.setActionCommand("copy");
+		paste.setActionCommand("paste");
+		menuBar.add(copy);
+		menuBar.add(paste);
+		
 		
 		/*
 		 * panel initialization
@@ -151,6 +162,10 @@ public class PasteCutter extends JFrame implements ActionListener{
 			main.remove(right);
 			main.remove(top);
 			cp.validate();
+		}
+		//
+		else if(e.getActionCommand() == "copy"){
+			
 		}
 	}
 
