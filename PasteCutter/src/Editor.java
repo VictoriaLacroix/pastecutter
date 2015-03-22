@@ -6,6 +6,7 @@ import javax.swing.*;
  * I built a new one to test things.
  */
 public class Editor extends JFrame implements ActionListener{
+<<<<<<< HEAD
 
 	JPanel		mainpanel;	
 	HolderArray	holder;
@@ -61,11 +62,28 @@ public class Editor extends JFrame implements ActionListener{
 		editMenu.add(copy);
 		bar.add(editMenu);
 		bar.add(layoutMenu);
+=======
+	
+	HolderArray	holder;
+	JTextArea	text;
+	JMenuBar	bar;
+	JButton		copy;
+	copyListener	copyList;
+
+	public Editor(){
+		copy = new JButton("copy");
+		copyList = new copyListener(this);
+		copy.addActionListener(copyList);
+		
+		bar = new JMenuBar();
+		bar.add(copy);
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 	
 		text = new JTextArea("Text!");
 		text.setPreferredSize(new Dimension(640,480));
 	
 		holder = new HolderArray(this);
+<<<<<<< HEAD
 
 		setLayout(new BorderLayout());
 
@@ -74,6 +92,14 @@ public class Editor extends JFrame implements ActionListener{
 
 		add(bar, BorderLayout.NORTH);
 		add(mainpanel, BorderLayout.CENTER);
+=======
+		
+		setLayout(new BorderLayout());
+
+		add(text, BorderLayout.CENTER);
+		add(holder, BorderLayout.WEST);
+		add(bar, BorderLayout.NORTH);
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 
 		pack();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,6 +112,7 @@ public class Editor extends JFrame implements ActionListener{
 		holder.insert(s);
 	}
 
+<<<<<<< HEAD
 	public void cut(){
 		String s = text.getSelectedText();
 		text.replaceSelection("");
@@ -105,6 +132,8 @@ public class Editor extends JFrame implements ActionListener{
 		validate();
 	}
 
+=======
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 	public static void main(String[] args){
 		Editor u = new Editor();
 	}
@@ -116,14 +145,22 @@ public class Editor extends JFrame implements ActionListener{
 	/**
 	 * Needed a third ActionListener
 	 */
+<<<<<<< HEAD
 	private class commandListener implements ActionListener{
 		Editor ui;
 
 		public commandListener(Editor pastecutter){
+=======
+	private class copyListener implements ActionListener{
+		Editor ui;
+
+		public copyListener(Editor pastecutter){
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 			ui = pastecutter;
 		}
 
 		public void actionPerformed(ActionEvent e){
+<<<<<<< HEAD
 			String cmd = e.getActionCommand();
 			if(cmd == "copy"){
 				ui.copy();
@@ -140,6 +177,10 @@ public class Editor extends JFrame implements ActionListener{
 					ui.resetLayout(3);
 				}
 			}
+=======
+			
+			ui.copy();
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 		}
 	}
 }

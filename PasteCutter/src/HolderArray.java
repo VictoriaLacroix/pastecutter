@@ -12,7 +12,11 @@ public class HolderArray extends JPanel implements ActionListener{
 
 	public HolderArray(ActionListener parent){
 		buttons = new JButton[buttCount];
+<<<<<<< HEAD
 		resetLayout(false);
+=======
+		setLayout(new GridLayout(buttCount, 1));
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 		for(int i = 0; i < buttCount; ++i){
 			buttons[i] = new JButton();
 			buttons[i].addActionListener(parent);
@@ -23,6 +27,7 @@ public class HolderArray extends JPanel implements ActionListener{
 		setPreferredSize(new Dimension(100,480));
 	}
 
+<<<<<<< HEAD
 	public void resetLayout(boolean ishoriz){
 		if(ishoriz){
 			//horizontal orientation
@@ -35,17 +40,25 @@ public class HolderArray extends JPanel implements ActionListener{
 		}
 	}
 
+=======
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 	/**
 	 *	Inserts a string at the top of the array and cascades the rest down.
 	 */
 	public void insert(String s){
 		for(int i = buttCount-1; i > 0; --i){
 			buttons[i].setText(buttons[i-1].getText());
+<<<<<<< HEAD
 			buttons[i].setToolTipText(buttons[i].getText());
 			buttons[i].setActionCommand(buttons[i].getText());
 		}
 		buttons[0].setText(s);
 		buttons[0].setToolTipText(buttons[0].getText());
+=======
+			buttons[i].setActionCommand(buttons[i].getText());
+		}
+		buttons[0].setText(s);
+>>>>>>> 84cbd03c8a939f039a42b0339dc3407d5f81381a
 		buttons[0].setActionCommand(s);
 	}
 
